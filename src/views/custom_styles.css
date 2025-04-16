@@ -1,0 +1,94 @@
+/* General Background */
+body {
+    background-color: #1e1e2f; /* Previous dark background */
+    color: #e4e4eb; /* Previous light gray text */
+}
+
+/* Header Styling */
+h1, h2, h3 {
+    color: #ff6f61; /* Previous red */
+    font-family: 'Arial', sans-serif;
+    font-weight: normal;
+}
+
+/* Buttons */
+button {
+    background-color: #ff6f61; /* Previous red */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-family: 'Arial', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #ff4a3d; /* Previous darker red */
+}
+
+/* Sidebar */
+.stSidebar {
+    background-color: #2c2c3e; /* Previous sidebar dark gray */
+    color: #e4e4eb;
+}
+
+.stSidebar .stButton button {
+    background-color: #ff6f61; /* Previous red */
+    color: white;
+}
+
+/* Divider */
+hr {
+    border: 1px solid #ff6f61; /* Previous red */
+}
+
+/* Text Inputs */
+textarea, input {
+    background-color: #2c2c3e; /* Previous input dark gray */
+    color: #e4e4eb;
+    border: 1px solid #ff6f61; /* Previous red */
+    border-radius: 5px;
+    padding: 8px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Metrics */
+.stMetric {
+    background-color: #2c2c3e; /* Previous metric dark gray */
+    color: #e4e4eb;
+    border: 1px solid #ff6f61; /* Previous red */
+    border-radius: 5px;
+    padding: 12px;
+    font-family: 'Arial', sans-serif;
+}
+
+/* Links */
+a {
+    color: #ff6f61; /* Previous red */
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+/* Progress Bars */
+.stProgress > div > div > div {
+    background-color: #2c2c3e;  /* Background of progress bar */
+    border-radius: 5px;
+}
+
+/* Positive sentiment progress bar */
+.positive-progress > div > div > div > div {
+    background-color: #4CAF50 !important;  /* Green */
+    border-radius: 5px;
+}
+
+/* Negative sentiment progress bar */
+.negative-progress > div > div > div > div {
+    background-color: #5c0303 !important;  /* Dark red */
+    border-radius: 5px;
+}
