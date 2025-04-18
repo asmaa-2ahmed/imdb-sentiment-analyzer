@@ -1,7 +1,3 @@
-Got it! Here's your improved **README file** with the **Project Structure section removed**, a more **organized and sequential flow**, and a polished, professional tone that still feels friendly and welcoming:
-
----
-
 # 🎬 IMDB Sentiment Analyzer
 
 Welcome to the **IMDB Sentiment Analyzer**, a full-stack web application designed to classify movie reviews as **Positive** or **Negative** using deep learning. Built using **TensorFlow**, **FastAPI**, and **Streamlit**, this tool provides both a REST API and an interactive UI for real-time sentiment prediction.
