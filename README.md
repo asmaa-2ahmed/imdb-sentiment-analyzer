@@ -124,7 +124,3 @@ If you find this project helpful or interesting, consider giving it a **⭐ on G
 ## 📫 Stay Connected
 
 Feel free to reach out via [GitHub Issues](https://github.com/asmaa-2ahmed/imdb-sentiment-analyzer) for questions or collaboration ideas.
-
----
-
-Would you like a version with badge icons (for Python version, license, etc.) or a logo at the top? I can also help make this instantly copy-paste-ready for GitHub.
