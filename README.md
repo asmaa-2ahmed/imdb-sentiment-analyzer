@@ -1,138 +1,134 @@
-🎬 IMDB Sentiment Analyzer
-An end-to-end movie review sentiment analysis web application using FastAPI, TensorFlow, and Streamlit. This tool classifies IMDB movie reviews as Positive or Negative with a confidence score.
+Got it! Here's your improved **README file** with the **Project Structure section removed**, a more **organized and sequential flow**, and a polished, professional tone that still feels friendly and welcoming:
 
-📂 Project Structure
-graphql
-Copy
-Edit
-.
-├── src/
-│   ├── config.py              # Configuration constants and paths
-│   ├── inference.py           # SentimentAnalyzer class for prediction
-│   ├── schemas.py             # Pydantic models for API request/response
-│   └── views/
-│       └── custom_styles.css  # Custom Streamlit UI styling
-├── main.py                    # FastAPI backend entry point
-├── app.py                     # Streamlit frontend
-├── assets/
-│   ├── model.keras            # Trained Keras model
-│   └── word2idx.joblib        # Vocabulary index
-├── requirements.txt           # Project dependencies
-└── README.md                  # You’re here!
-🚀 Features
-✅ Text preprocessing & tokenization
+---
 
-✅ Trained deep learning model (TensorFlow)
+# 🎬 IMDB Sentiment Analyzer
 
-✅ REST API with FastAPI (secured with API key)
+Welcome to the **IMDB Sentiment Analyzer**, a full-stack web application designed to classify movie reviews as **Positive** or **Negative** using deep learning. Built using **TensorFlow**, **FastAPI**, and **Streamlit**, this tool provides both a REST API and an interactive UI for real-time sentiment prediction.
 
-✅ Interactive UI with Streamlit
+Whether you're a developer, data scientist, or just a movie buff, this app lets you explore natural language processing and neural networks in action — all from your local machine!
 
-✅ Dynamic confidence visualization
+---
 
-✅ Custom dark theme with red accents
+## 🌟 Key Features
 
-🛠️ Installation
-1. Clone the repository
-bash
-Copy
-Edit
-git clone https://github.com/your-username/imdb-sentiment-analyzer.git
+- ✅ **Real-time Sentiment Classification** using a trained Keras model  
+- ✅ **Confidence Score Visualization** for transparency in predictions  
+- ✅ **RESTful API** secured with an API key using FastAPI  
+- ✅ **Interactive Frontend** powered by Streamlit  
+- ✅ **Custom Themed UI** with dark mode and red accents  
+- ✅ **Clean, modular codebase** ready for extension and experimentation  
+
+---
+
+## 🚀 Installation & Setup Guide
+
+### 1️⃣ Clone the Repository
+```bash
+git clone https://github.com/asmaa-2ahmed/imdb-sentiment-analyzer
 cd imdb-sentiment-analyzer
-2. Create & activate a virtual environment
-bash
-Copy
-Edit
-python -m venv venv
-source venv/bin/activate  # On Windows use venv\Scripts\activate
-3. Install dependencies
-bash
-Copy
-Edit
-pip install -r requirements.txt
-4. Set up .env file
-Create a .env file in the root directory with the following:
+```
 
-env
-Copy
-Edit
+### 2️⃣ Create and Activate a Virtual Environment
+```bash
+python -m venv venv
+source venv/bin/activate          # Windows: venv\Scripts\activate
+```
+
+### 3️⃣ Install Required Dependencies
+```bash
+pip install -r requirements.txt
+```
+
+### 4️⃣ Configure Environment Variables
+Create a `.env` file in the root directory and add:
+```
 APP_NAME=IMDB Sentiment Analyzer
 VERSION=1.0
 API_SECRET_KEY=your_secure_api_key
-Replace your_secure_api_key with a strong key.
+```
+> 🔐 Replace `your_secure_api_key` with a strong secret key of your choice.
 
-🧠 Model Info
-Architecture: Pre-trained Keras model
+---
 
-Input Length: 300 tokens
+## ▶️ Running the Application Locally
 
-Embedding Size: 128
-
-Vocabulary Size: 10,000
-
-Trained on: IMDB Movie Reviews Dataset
-
-▶️ Running the Application
-Start the FastAPI Backend
-bash
-Copy
-Edit
+### ✅ Start the FastAPI Backend (API)
+```bash
 uvicorn main:app --reload
-By default runs at: http://127.0.0.1:8000
+```
+- Runs at: [http://127.0.0.1:8000](http://127.0.0.1:8000)  
+- Swagger UI: [http://127.0.0.1:8000/docs](http://127.0.0.1:8000/docs)  
+- Health Check: `GET /` with header `X-API-key: your_api_key`
 
-Test health: GET / with header X-API-key: your_api_key
+---
 
-Swagger docs: http://127.0.0.1:8000/docs
-
-Launch the Streamlit Frontend
-bash
-Copy
-Edit
+### ✅ Launch the Streamlit Frontend (UI)
+```bash
 streamlit run app.py
-Runs at: http://localhost:8501
+```
+- Runs at: [http://localhost:8501](http://localhost:8501)  
+- Navigate through `Home`, `Prediction`, and `Model Info` sections  
+- Enter your API key to unlock prediction functionality
 
-Enter your API key to unlock features
+---
 
-Navigate through Home / Prediction / Model Info sections
+## 🧠 Model Details
 
-🧪 Sample Reviews to Try
-text
-Copy
-Edit
-"This movie was absolutely fantastic! The acting was superb and the plot kept me engaged throughout."
-→ Positive
+- **Architecture:** Pre-trained Keras Sequential model  
+- **Input Length:** 300 tokens  
+- **Embedding Size:** 128  
+- **Vocabulary Size:** 10,000  
+- **Dataset:** IMDB Movie Reviews (binary classification)
 
-"I found the film to be quite disappointing. The storyline was weak and the characters weren't developed."
-→ Negative
+---
 
-"A masterpiece with brilliant cinematography and performances. Truly moving!"
-→ Positive
+## 🧪 Example Reviews to Try
 
-"This film was boring and way too long. I almost fell asleep."
-→ Negative
-🔐 API Usage
-🔑 Authentication
-All endpoints require the header:
+Here are some review texts you can use for testing:
 
-makefile
-Copy
-Edit
-X-API-key: your_api_key
-📤 POST /predict
-Request Body:
+| Sample Review                                                                                   | Expected Sentiment |
+|--------------------------------------------------------------------------------------------------|---------------------|
+| "This movie was absolutely fantastic! The acting was superb and the plot kept me engaged."       | 👍 Positive          |
+| "I found the film to be quite disappointing. The storyline was weak and characters underdeveloped." | 👎 Negative       |
+| "A masterpiece with brilliant cinematography and powerful performances. Truly moving!"           | 👍 Positive          |
+| "This film was boring and way too long. I nearly fell asleep watching it."                       | 👎 Negative          |
 
-json
-Copy
-Edit
-{
-  "text": "The movie was great and very emotional."
-}
-Response:
+---
 
-json
-Copy
-Edit
-{
-  "sentiment": "Positive",
-  "probability": 0.93
-}
+## ⚙️ How It Works
+
+1. **Text Input:** Users submit a review through the API or UI.
+2. **Preprocessing:** The review is tokenized and padded to match the model’s input format.
+3. **Model Inference:** The model predicts sentiment and outputs a probability score.
+4. **Response Generation:** FastAPI returns the result as structured JSON.
+5. **Visualization:** Streamlit displays the sentiment and confidence level in a clean interface.
+
+---
+
+## 🙋‍♂️ Want to Contribute?
+
+We’d love your input! If you have:
+
+- 🔧 Feature suggestions  
+- 🐞 Bug reports  
+- 🎨 UI/UX improvements  
+- 🧪 Model performance tweaks  
+
+Feel free to [open an issue](https://github.com/asmaa-2ahmed/imdb-sentiment-analyzer) or submit a pull request. Your feedback helps make this project even better!
+
+---
+
+## ⭐ Show Some Love
+
+If you find this project helpful or interesting, consider giving it a **⭐ on GitHub** — it really helps!
+
+---
+
+## 📫 Stay Connected
+
+Feel free to reach out via [GitHub Issues](https://github.com/asmaa-2ahmed/imdb-sentiment-analyzer) for questions or collaboration ideas.
+
+---
+
+Would you like a version with badge icons (for Python version, license, etc.) or a logo at the top? I can also help make this instantly copy-paste-ready for GitHub.
